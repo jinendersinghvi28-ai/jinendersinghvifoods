@@ -1,0 +1,58 @@
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #fdf6e4;
+  gap: 100px;
+}
+
+.hero {
+  background-image: url("/logo.png"); /* place bg.jpg inside /public */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 500px;
+  height: 500px;
+
+  /* Center content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Text styling */
+  color: white;
+  text-align: center;
+}
+
+.hero-content {
+  padding-top: 400px;
+}
+.hero-image {
+  background-color: #efecdd;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+  color: black;
+}
+
+.hero-content p {
+  margin-top: 0.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .flex-container {
+    flex-flow: wrap;
+  }
+  .hero-2 {
+    max-width: 300px;
+    margin: 0 auto;
+    height: 400px;
+  }
+}

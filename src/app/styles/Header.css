@@ -1,0 +1,119 @@
+/* Fixed header so it always sticks reliably */
+.navbar {
+  position: fixed; /* switched from sticky to fixed */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px; /* fixed height */
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  /* avoid using transform on ancestors (this file doesn't add any) */
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
+}
+
+/* Container */
+.nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Logo */
+.logo {
+  font-weight: bold;
+  font-size: 2rem;
+  color: #2a1f17;
+  margin-left: 6px;
+}
+
+.logo-image {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 1.5rem; /* lowered slightly for better fit */
+  color: #000000;
+  padding: 6px 4px;
+  display: inline-block;
+}
+
+.nav-links a:hover {
+  color: #000;
+}
+
+.contact-link {
+  background-color: orange;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+/* Mobile */
+.menu-toggle {
+  display: none;
+  font-size: 3rem;
+  width: 5.25rem;
+  height: 4.25rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #000;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 64px; /* directly below fixed header */
+    right: 0;
+    width: 240px;
+    height: calc(100vh - 64px);
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 16px;
+    color: #000;
+    transform: translateX(110%);
+    transition: transform 0.3s ease;
+    box-shadow: -6px 0 20px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+
+  .nav-links a {
+    color: #000;
+    font-size: 1.05rem;
+    width: auto;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* Accessibility: ensure anchor target is not hidden by header */
+:root {
+  scroll-behavior: smooth; /* optional global smooth scroll */
+}
