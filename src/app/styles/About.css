@@ -3,7 +3,7 @@
   flex-direction: row;
   min-height: 50vh;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   padding: 64px 1.5rem;
   background-color: #ffffff;
   gap: 150px;
